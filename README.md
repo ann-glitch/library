@@ -7,3 +7,4 @@ I also learnt how to save items to local storage so yes your book inputs are sav
 I also learnt what JSON.Stringnify is hehehe. Before this, i had no idea what it was.
 
 Still working on displaying the book inputs in a tabular form. stay tuned!
+here's the live preview: https://ann-glitch.github.io/library/
