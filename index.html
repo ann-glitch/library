@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>library</title>
     <link href="style.css" rel="stylesheet">
 </head>
@@ -31,30 +30,28 @@
 </div>
 
 <div class="left-container">
-    <table class="book-list">
+    <table id="books">
+        <caption>list of the book input</caption>
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Status</th>
-            <th>Delete</th>
-          </tr>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Status</th>
+                <th>Delete</th>
+            </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Sky Ravka</td>
-            <td>Griffann</td>
-            <td>300 pages</td>
-            <td>read</td>
-            <td>delete</td>
-          </tr>
-        </tbody>
-      </table>
+
+
+        <tfoot>
+            <tr>
+                <td colspan="4">Total books read:</td>
+                <td>0</td>
+            </tr>
+        </tfoot>
+    </table>
 </div>
-
     <script src="library.js"></script>
-
 </body>
 </html>
    

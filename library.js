@@ -1,5 +1,22 @@
 let library = [];
 
+const table = document.getElementById("books");
+
+function createBook(book) {
+  const tbody = document.createElement("tbody");
+
+  tbody.innerHTML = `
+  <tr>
+    <td>${book.title}</td>
+    <td>${book.author}</td>
+    <td>${book.pages} pages</td>
+    <td>${book.read}</td>
+    <td><button class="btn"><i class="fa fa-trash"></i></button></td>
+  </tr>`;
+
+  return tbody;
+}
+
 const addToLibrary = (event) => {
   event.preventDefault();
   let book = {
@@ -9,14 +26,15 @@ const addToLibrary = (event) => {
     read: document.querySelector('input[name="read"]:checked').value,
   };
 
-  library.push(book);
   document.querySelector("form").reset();
 
-  console.warn("added", { library });
-  let pre = document.querySelector("#message pre");
-  pre.textContent = "\n" + JSON.stringify(library, "\t", 2);
+  const tbody = createBook(book);
+  table.appendChild(tbody);
 
-  localStorage.setItem("MyLibraryList", JSON.stringify(library));
+  console.warn("added", { library });
+  // let pre = document.querySelector("#message pre");
+  // pre.textContent = "\n" + JSON.stringify(library, "\t", 2);
+  // localStorage.setItem("MyLibraryList", JSON.stringify(library));
 };
 
 document.addEventListener("DOMContentLoaded", () => {
