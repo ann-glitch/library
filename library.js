@@ -8,7 +8,7 @@ function td(content) {
 }
 
 function createBook(book) {
-  console.log("createing a book with id",book.id);
+  console.log("createing a book with id", book.id);
   const idOfBook = book.id;
   const tbody = document.createElement("tbody");
   const btn = document.createElement("button");
@@ -18,7 +18,7 @@ function createBook(book) {
     reRenderBooks(filteredBooks);
   });
   btn.className = "btn";
-  btn.innerHTML = "<i class='fa fa-trash'>DELETE</i>";
+  btn.innerHTML = "<i class='fa fa-trash'></i>";
 
   const tr = document.createElement("tr");
   tr.appendChild(td(book.title));
