@@ -43,11 +43,14 @@ function removeExistingTBody(node) {
 }
 
 function reRenderBooks(b) {
+    const totalBooks = document.querySelector("total-books")
     for (let i = 0; i < b.length; i++) {
         const bookFromLibrary = b[i];
         const tbody = createBook(bookFromLibrary);
         table.appendChild(tbody);
     }
+
+    totalBooks.textContent = b.length;
 }
 
 const addToLibrary = (event) => {
