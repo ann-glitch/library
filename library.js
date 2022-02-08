@@ -19,7 +19,8 @@ function createBook(book) {
 
 const addToLibrary = (event) => {
   event.preventDefault();
-  let book = {
+  const book = {
+    id: library.length,
     title: document.getElementById("title").value,
     author: document.getElementById("author").value,
     pages: document.getElementById("pages").value,
@@ -30,6 +31,13 @@ const addToLibrary = (event) => {
 
   const tbody = createBook(book);
   table.appendChild(tbody);
+  library.push(book);
+
+  for (let i = library.length - 1; i < library.length; i++) {
+      const bookFromLibrary = library(i);
+      const tbody = createBook(bookFromLibrary);
+      table.appendChild(tbody);
+  }
 
   console.warn("added", { library });
   // let pre = document.querySelector("#message pre");
