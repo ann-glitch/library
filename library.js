@@ -1,20 +1,53 @@
-let library = [];
-
+const books = [];
 const table = document.getElementById("books");
 
+function td(content) {
+    const td = document.createElement("td");
+    td.innerHTML = content;
+    return td;
+}
+
 function createBook(book) {
-  const tbody = document.createElement("tbody");
+    console.log("creating a book with id", book.id);
+    const idOfBook = book.id;
+    const tbody = document.createElement("tbody");
+    const btn = document.createElement("button");
+    btn.addEventListener ("click", function(e) {
+        const filteredBooks = books.filter((b) => b.id != idOfBook);
+        removeExistingTBody(table);
+        reRenderBooks(filteredBooks);
+    });
+    btn.className = "btn";
+    btn.innerHTML = "<i class='fa fa-trash'></i>";
 
-  tbody.innerHTML = `
-  <tr>
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.pages} pages</td>
-    <td>${book.read}</td>
-    <td><button class="btn"><i class="fa fa-trash"></i></button></td>
-  </tr>`;
+ const tr = document.createElement("tr");
+ tr.appendChild(td(book.title));
+ tr.appendChild(td(book.author));
+ tr.appendChild(td(book.pages));
+ tr.appendChild(td(book.read));
 
-  return tbody;
+ const buttonTd = td("");
+ buttonTd.appendChild(btn);
+
+ tr.appendChild(buttonTd);
+
+
+ return tbody
+}
+
+function removeExistingTBody(node) {
+    const children = Array.from(getElementsByTagName("tbody"));
+    for (const child of children) {
+        child.remove();
+    }
+}
+
+function reRenderBooks(b) {
+    for (let i = 0; i < b.length; i++) {
+        const bookFromLibrary = b[i];
+        const tbody = createBook(bookFromLibrary);
+        table.appendChild(tbody);
+    }
 }
 
 const addToLibrary = (event) => {
@@ -28,16 +61,9 @@ const addToLibrary = (event) => {
   };
 
   document.querySelector("form").reset();
-
-  const tbody = createBook(book);
-  table.appendChild(tbody);
   library.push(book);
+  removeExistingTBody(table);
 
-  for (let i = library.length - 1; i < library.length; i++) {
-      const bookFromLibrary = library(i);
-      const tbody = createBook(bookFromLibrary);
-      table.appendChild(tbody);
-  }
 
   console.warn("added", { library });
   // let pre = document.querySelector("#message pre");
