@@ -2,61 +2,61 @@ const books = [];
 const table = document.getElementById("books");
 
 function td(content) {
-    const td = document.createElement("td");
-    td.innerHTML = content;
-    return td;
+  const td = document.createElement("td");
+  td.innerHTML = content;
+  return td;
 }
 
 function createBook(book) {
-    console.log("creating a book with id", book.id);
-    const idOfBook = book.id;
-    const tbody = document.createElement("tbody");
-    const btn = document.createElement("button");
-    btn.addEventListener ("click", function(e) {
-        const filteredBooks = books.filter((b) => b.id != idOfBook);
-        removeExistingTBody(table);
-        reRenderBooks(filteredBooks);
-    });
-    btn.className = "btn";
-    btn.innerHTML = "<i class='fa fa-trash'></i>";
+  console.log("createing a book with id",book.id);
+  const idOfBook = book.id;
+  const tbody = document.createElement("tbody");
+  const btn = document.createElement("button");
+  btn.addEventListener("click", function (e) {
+    const filteredBooks = books.filter((b) => b.id != idOfBook);
+    removeExistingTbody(table);
+    reRenderBooks(filteredBooks);
+  });
+  btn.className = "btn";
+  btn.innerHTML = "<i class='fa fa-trash'>DELETE</i>";
 
- const tr = document.createElement("tr");
- tr.appendChild(td(book.title));
- tr.appendChild(td(book.author));
- tr.appendChild(td(book.pages));
- tr.appendChild(td(book.read));
+  const tr = document.createElement("tr");
+  tr.appendChild(td(book.title));
+  tr.appendChild(td(book.author));
+  tr.appendChild(td(book.pages));
+  tr.appendChild(td(book.read));
 
- const buttonTd = td("");
- buttonTd.appendChild(btn);
+  const buttonTd = td("");
+  buttonTd.appendChild(btn);
 
- tr.appendChild(buttonTd);
+  tr.appendChild(buttonTd);
 
+  tbody.appendChild(tr);
 
- return tbody
+  return tbody;
 }
 
-function removeExistingTBody(node) {
-    const children = Array.from(getElementsByTagName("tbody"));
-    for (const child of children) {
-        child.remove();
-    }
+function removeExistingTbody(node) {
+  const children = Array.from(node.getElementsByTagName("tbody"));
+  for (const child of children) {
+    child.remove();
+  }
 }
 
 function reRenderBooks(b) {
-    const totalBooks = document.querySelector("total-books")
-    for (let i = 0; i < b.length; i++) {
-        const bookFromLibrary = b[i];
-        const tbody = createBook(bookFromLibrary);
-        table.appendChild(tbody);
-    }
-
-    totalBooks.textContent = b.length;
+  const totalBooks = document.querySelector(".total-books");
+  for (let i = 0; i < b.length; i++) {
+    const bookFromLibary = b[i];
+    const tbody = createBook(bookFromLibary);
+    table.appendChild(tbody);
+  }
+  totalBooks.textContent = b.length;
 }
 
 const addToLibrary = (event) => {
   event.preventDefault();
   const book = {
-    id: library.length,
+    id: books.length,
     title: document.getElementById("title").value,
     author: document.getElementById("author").value,
     pages: document.getElementById("pages").value,
@@ -64,11 +64,11 @@ const addToLibrary = (event) => {
   };
 
   document.querySelector("form").reset();
-  library.push(book);
-  removeExistingTBody(table);
+  books.push(book);
+  removeExistingTbody(table);
+  reRenderBooks(books);
 
-
-  console.warn("added", { library });
+  console.warn("added", { books });
   // let pre = document.querySelector("#message pre");
   // pre.textContent = "\n" + JSON.stringify(library, "\t", 2);
   // localStorage.setItem("MyLibraryList", JSON.stringify(library));
@@ -77,3 +77,4 @@ const addToLibrary = (event) => {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("book-btn").addEventListener("click", addToLibrary);
 });
+
