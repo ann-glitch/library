@@ -1,108 +1,108 @@
 * {
-    font-family: sans-serif;
-  }
-  .content {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    padding: 30px;
-    background-color: lightgrey;
-  }
-  
-  form {
-    background-color: lightgrey;
-  }
-  
-  header {
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(61, 78, 78);
-    background-color: lightgrey;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .input-texts {
-    background-color: lightgrey;
-    width: 70%;
-    height: 20px;
-    border-radius: 8px;
-  }
-  
-  .input-texts:focus {
-    border: solid 3px rgb(200, 222, 236);
-  }
-  
-  p,
-  .input-radio {
-    background-color: lightgrey;
-  }
-  
-  #book-btn {
-    background-color: rgb(233, 245, 245);
-    height: 40px;
-    border: none;
-  }
-  
-  table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-  }
-  
-  .left-container {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px;
-  }
-  
-  td,
-  th {
-    border: 1px solid rgb(190, 190, 190);
-    padding: 10px 20px;
-  }
-  
-  th {
-    font-size: 15px;
-    background-color: rgb(235, 235, 235);
-  }
-  
-  td {
-    text-align: center;
-    font-size: 13px;
-  }
-  
-  tr:nth-child(even) td {
-    background-color: rgb(250, 250, 250);
-  }
-  
-  tr:nth-child(odd) td {
-    background-color: rgb(245, 245, 245);
-  }
-  
-  caption {
-    padding: 10px;
-  }
-  
-  tbody {
-    font-size: 95%;
-    font-style: italic;
-  }
-  
-  tfoot {
-    font-weight: bold;
-  }
-  
-  .btn {
-    border: none;
-    font-size: 15px;
-    color: rgb(71, 62, 71);
-  }
-  
+  font-family: sans-serif;
+}
+.content {
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 30px;
+  background-color: lightgrey;
+}
+
+form {
+  background-color: lightgrey;
+}
+
+header {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(61, 78, 78);
+  background-color: lightgrey;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  outline: none;
+  padding-left: 20px;
+}
+
+.input-texts {
+  background-color: lightgrey;
+  width: 70%;
+  height: 20px;
+  border-radius: 8px;
+}
+
+p,
+.input-radio {
+  background-color: lightgrey;
+}
+
+#book-btn {
+  background-color: rgb(233, 245, 245);
+  height: 40px;
+  border: none;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.left-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+th {
+  font-size: 15px;
+  background-color: rgb(235, 235, 235);
+}
+
+td {
+  text-align: center;
+  font-size: 13px;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}
+
+caption {
+  padding: 10px;
+}
+
+tbody {
+  font-size: 95%;
+  font-style: italic;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+.btn {
+  border: none;
+  font-size: 15px;
+  color: rgb(71, 62, 71);
+}
